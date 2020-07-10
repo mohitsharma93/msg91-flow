@@ -10,7 +10,7 @@ exports.apiCall = async (options, body = null) => {
   return new Promise((resolve, reject) => {
     const req = http.request(options, (res) => {
 
-      if (!options.header.authKey) reject({ msg:'Auth code not available', error: true});
+      if (!options.header.authkey) return reject({ msg:'Auth code not available', error: true});
 
       const chunks = []
       res.on('data', (chunk) => {
@@ -25,6 +25,10 @@ exports.apiCall = async (options, body = null) => {
         const body = Buffer.concat(chunks)
         resolve(JSON.parse(body.toString()));
       })
+    });
+    req.on('error', function(err) {
+      // This is not a "Second reject", just a different sort of failure
+      reject(err);
     });
     if (body) {
       req.write(JSON.stringify(body));

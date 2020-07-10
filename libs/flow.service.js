@@ -3,7 +3,8 @@ const Helper = require('./helper');
 
 class flowService extends Helper {
 	/**
-	 * Creates a new flow instance to handle OTP message handling of the MSG91 services
+	 * Creates a new flow instance.
+	 * 
 	 * @param {String} authKey Authentication key
 	 */
 	constructor(authKey) {
@@ -12,9 +13,11 @@ class flowService extends Helper {
 	}
 
 	/**
-	 * Creates a new get flow instance to get flow templates MSG91 services
-	 * @param {String}  Authentication key
-	 */
+	 * get flow by passing flow id.
+	 * 
+   * @param {string} flowId
+	 * @return {Promise<Object>} 
+   **/
 	async getFlow(flowId = '') {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -37,6 +40,12 @@ class flowService extends Helper {
 		});
 	}
 
+	/**
+	 * add flow
+	 * 
+   * @param {object} postData data to be add
+	 * @return {Promise<Object>} 
+   **/
 	async addFlow(postData) {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -60,6 +69,12 @@ class flowService extends Helper {
 		});
 	}
 
+	/**
+	 * update flow
+	 * @param {string} flowId flow id 
+   * @param {object} updatedData updated data
+	 * @return {Promise<Object>} 
+   **/
 	async updateFlow(flowId, updatedData) {
 		return new Promise(async (resolve, reject) => {
 			try {

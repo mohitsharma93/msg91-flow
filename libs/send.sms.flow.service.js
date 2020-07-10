@@ -2,7 +2,8 @@ const { apiCall, handleResponse } = require('./api.call');
 
 class sendSmsFlowService {
   /**
-	 * Creates a new flow instance to handle OTP message handling of the MSG91 services
+	 * Creates a new flow instance to send sms via flow
+	 * 
 	 * @param {String} authKey Authentication key
 	 */
 	constructor(authKey) {
@@ -10,9 +11,11 @@ class sendSmsFlowService {
   }
   
   /**
-	 * Creates a new flow instance to handle OTP message handling of the MSG91 services
-	 * @param {String} authKey Authentication key
-	 */
+	 * send sms through flow
+	 * 
+   * @param {object} postData will contain about authkey, senderid, ....
+	 * @return {Promise<Object>} 
+   **/
 	async sendSmsViaFlow(postData) {
 		return new Promise(async (resolve, reject) => {
 			try {
