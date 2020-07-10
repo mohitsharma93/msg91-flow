@@ -1,10 +1,13 @@
 {
   "name": "msg91-flow",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is used to handle msg91 apis such as create flow, get flow, update flow and send sms by flow.",
   "main": "index.js",
+  "browser": "dist/msg91Flow.min.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "rollup": "rollup  -c",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,12 @@
     "assert": "^2.0.0",
     "express": "^4.17.1",
     "mocha": "^8.0.1",
-    "nock": "^13.0.2"
+    "nock": "^13.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.21.0",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
