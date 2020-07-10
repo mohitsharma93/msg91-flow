@@ -30,8 +30,6 @@ flow.getFlow(flowId).then(() => {
 ```
 add flow 
 
-for post and update data [check doc](https://docs.msg91.com/collection/msg91-api-integration/5/send-sms-via-flow---bulk/T29N6CRT)
-
 ```javascript
 flow.addFlow(postData).then(() => {
 //Handle success result
@@ -54,6 +52,8 @@ flow.updateFlow(flowId, updateData).then(() => {
 Sending sms through flow to many messages to many users using a below snippet 
 
 Sending sms with flow 
+
+for  data [check doc](https://docs.msg91.com/collection/msg91-api-integration/5/send-sms-via-flow---bulk/T29N6CRT)
 
 ```javascript
 const sendSmsFlowService = require('msg91-sdk').sendSmsFlowService;
