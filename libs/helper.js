@@ -18,3 +18,5 @@ class Helper {
     return str.replace( /(<([^>]+)>)/ig, '');
   }
 }
+
+module.exports = Helper;

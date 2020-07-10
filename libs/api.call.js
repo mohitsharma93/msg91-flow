@@ -10,7 +10,7 @@ exports.apiCall = async (options, body = null) => {
   return new Promise((resolve, reject) => {
     const req = http.request(options, (res) => {
 
-      if (!options.header.authkey) throw new Error('Auth code not available');
+      if (!options.header.authKey) throw new Error('Auth code not available');
 
       const chunks = []
       res.on('data', (chunk) => {

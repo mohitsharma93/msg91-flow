@@ -25,7 +25,7 @@ class flowService extends Helper {
 					port: null,
 					path: '/api/v5/flows/' + id,
 					header: {
-						'authKey': this.authKey,
+						'authkey': this.authKey,
 					},
 				};
 
@@ -49,7 +49,7 @@ class flowService extends Helper {
 					header: {
 						'Content-Type': 'application/json',
 						'Content-Length': data.length,
-						'authKey': this.authKey,
+						'authkey': this.authKey,
 					},
 				};
 				const response = await apiCall(options, JSON.stringify(data));
@@ -73,7 +73,7 @@ class flowService extends Helper {
 					header: {
 						'Content-Type': 'application/json',
 						'Content-Length': data.length,
-						'authKey': this.authKey,
+						'authkey': this.authKey,
 					},
 				};
 				const response = await apiCall(options, JSON.stringify(data));
