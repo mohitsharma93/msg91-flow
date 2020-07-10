@@ -26,11 +26,10 @@ class sendSmsFlowService {
 					path: '/api/v5/flow/',
 					header: {
             'Content-Type': 'application/json',
-						'Content-Length': postData.length,
 						'authkey': this.authKey,
 					},
         };
-				const response = await apiCall(options, JSON.stringify(postData));
+				const response = await apiCall(options, JSON.stringify(postData)).catch(err => { reject(err) });
 				handleResponse(response, resolve, reject);
 			} catch (error) {
 				reject(error);

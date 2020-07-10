@@ -21,18 +21,18 @@ class flowService extends Helper {
 	async getFlow(flowId = '') {
 		return new Promise(async (resolve, reject) => {
 			try {
-				const id = this.checkSOrO(flowId);
+				const id = await this.checkSOrO(flowId);
 				const options = {
 					method: 'GET',
 					hostname: 'test.msg91.com',
 					port: null,
 					path: '/api/v5/flows/' + id,
-					header: {
+					headers: {
 						'authkey': this.authKey,
 					},
 				};
 
-				const response = await apiCall(options);
+				const response = await apiCall(options).catch(err => { reject(err) });
 				handleResponse(response, resolve, reject);
 			} catch (error) {
 				reject(error);
@@ -49,19 +49,18 @@ class flowService extends Helper {
 	async addFlow(postData) {
 		return new Promise(async (resolve, reject) => {
 			try {
-				let data = this.checkSOrO(postData);
+				let data = await this.checkSOrO(postData);
 				const options = {
 					method: 'POST',
 					hostname: 'test.msg91.com',
 					port: null,
 					path: '/api/v5/flow/',
-					header: {
+					headers: {
 						'Content-Type': 'application/json',
-						'Content-Length': data.length,
 						'authkey': this.authKey,
 					},
 				};
-				const response = await apiCall(options, JSON.stringify(data));
+				const response = await apiCall(options, JSON.stringify(data)).catch(err => { reject(err) });
 				handleResponse(response, resolve, reject);
 			} catch (error) {
 				reject(error);
@@ -78,20 +77,19 @@ class flowService extends Helper {
 	async updateFlow(flowId, updatedData) {
 		return new Promise(async (resolve, reject) => {
 			try {
-				let id = this.checkSOrO(flowId)
-				let data = this.checkSOrO(updatedData);
+				let id = await this.checkSOrO(flowId)
+				let data = await this.checkSOrO(updatedData);
 				const options = {
 					method: 'POST',
 					hostname: 'test.msg91.com',
 					port: null,
 					path: '/api/v5/flows/'+ id,
-					header: {
+					headers: {
 						'Content-Type': 'application/json',
-						'Content-Length': data.length,
 						'authkey': this.authKey,
 					},
 				};
-				const response = await apiCall(options, JSON.stringify(data));
+				const response = await apiCall(options, JSON.stringify(data)).catch(err => { reject(err) });
 				handleResponse(response, resolve, reject);
 			} catch (error) {
 				reject(error);
