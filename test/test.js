@@ -11,8 +11,8 @@ describe('flowService', () => {
 
   describe('constructor', () => {
     it('pass const value auht key', () => {
-      const authKey = new flowService('277839AnXJt4zrZs615f05696bP1')
-      assert.strictEqual(authKey.authKey, '277839AnXJt4zrZs615f05696bP1');
+      const authKey = new flowService('AUTH_KEY')
+      assert.strictEqual(authKey.authKey, 'AUTH_KEY');
     })
   })
 
@@ -33,7 +33,7 @@ describe('flowService', () => {
             path: '/api/v5/flows/' + flowId,
             headers: {
                 'content-type': 'application/json',
-                'authkey': '277839AnXJt4zrZs615f05696bP1'
+                'authkey': 'AUTH_KEY'
             }
         }
 
