@@ -49,8 +49,6 @@ flow.updateFlow(flowId, updateData).then(() => {
 
 ## Send SMS Through Flow
 
-Sending sms through flow to many messages to many users using a below snippet 
-
 Sending sms with flow 
 
 for  data [check doc](https://docs.msg91.com/collection/msg91-api-integration/5/send-sms-via-flow---bulk/T29N6CRT)
