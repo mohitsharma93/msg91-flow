@@ -23,8 +23,8 @@ class sendSmsFlowService {
 					path: '/api/v5/flow/',
 					header: {
             'Content-Type': 'application/json',
-						'Content-Length': data.length,
-						authKey: this.authKey,
+						'Content-Length': postData.length,
+						'authKey': this.authKey,
 					},
         };
 				const response = await apiCall(options, JSON.stringify(postData));

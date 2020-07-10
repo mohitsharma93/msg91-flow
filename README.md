@@ -9,7 +9,6 @@ Install node module package in your project
 npm install msg91-flow --save
 ```
 
-
 use the below code snippet for initialize class
 
 ```javascript
