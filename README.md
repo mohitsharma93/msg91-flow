@@ -9,9 +9,8 @@ Install node module package in your project
 npm install msg91-flow --save
 ```
 
-## Get Flow
 
-use the below code snippet for get flow 
+use the below code snippet for initialize class
 
 ```javascript
 const flowService = require('msg91-sdk').flowService;
@@ -19,7 +18,7 @@ const flow = new flowService("AUTH_KEY");
 ```
 now you can use any of flow method after initialize class
 
-get flow by flow id
+## Get Flow by flow id
 
 ```javascript
 flow.getFlow(flowId).then(() => {
@@ -28,7 +27,8 @@ flow.getFlow(flowId).then(() => {
 //Handle failure result
 })
 ```
-add flow 
+
+## add flow 
 
 ```javascript
 flow.addFlow(postData).then(() => {
@@ -37,7 +37,8 @@ flow.addFlow(postData).then(() => {
 //Handle failure result
 })
 ```
-Update Flow
+
+## Update Flow
 
 ```javascript
 flow.updateFlow(flowId, updateData).then(() => {
