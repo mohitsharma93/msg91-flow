@@ -7,9 +7,10 @@ import nodePolyfills from 'rollup-plugin-node-polyfills';
 export default [{
   input: 'index.js',
   output: {
-    name: "Able",
+    name: "msg91",
     file: pkg.browser,
     format: 'iife',
+    exports: 'named',
     sourcemap: true,
   },
   plugins: [
